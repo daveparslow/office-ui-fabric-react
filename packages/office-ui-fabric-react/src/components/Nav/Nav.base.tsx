@@ -123,6 +123,10 @@ export class NavBase extends BaseComponent<INavProps, INavState> implements INav
         styles={buttonStyles}
         href={link.url || (link.forceAnchor ? 'javascript:' : undefined)}
         iconProps={link.iconProps || { iconName: link.icon || '' }}
+<<<<<<< HEAD
+=======
+        ariaDescription={link.title || link.name}
+>>>>>>> e7b9f002492fccfbd6f40749589a7b2287b112d0
         onClick={link.onClick ? this._onNavButtonLinkClicked.bind(this, link) : this._onNavAnchorLinkClicked.bind(this, link)}
         title={link.title || link.name}
         target={link.target}
@@ -211,7 +215,11 @@ export class NavBase extends BaseComponent<INavProps, INavState> implements INav
   };
 
   private _renderGroupHeader = (group: INavLinkGroup): React.ReactElement<{}> => {
+<<<<<<< HEAD
     const { styles, groups, theme, expandButtonAriaLabel } = this.props;
+=======
+    const { styles, groups, theme } = this.props;
+>>>>>>> e7b9f002492fccfbd6f40749589a7b2287b112d0
     const classNames = getClassNames(styles!, {
       theme: theme!,
       isGroup: true,
@@ -220,12 +228,16 @@ export class NavBase extends BaseComponent<INavProps, INavState> implements INav
     });
 
     return (
+<<<<<<< HEAD
       <button
         className={classNames.chevronButton}
         onClick={this._onGroupHeaderClicked.bind(this, group)}
         aria-label={expandButtonAriaLabel}
         aria-expanded={!this.state.isGroupCollapsed![group.name!]}
       >
+=======
+      <button className={classNames.chevronButton} onClick={this._onGroupHeaderClicked.bind(this, group)}>
+>>>>>>> e7b9f002492fccfbd6f40749589a7b2287b112d0
         <Icon className={classNames.chevronIcon} iconName="ChevronDown" />
         {group.name}
       </button>
